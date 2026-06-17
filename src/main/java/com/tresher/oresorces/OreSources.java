@@ -1,5 +1,7 @@
 package com.tresher.oresorces;
 
+import com.tresher.oresorces.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -34,7 +36,9 @@ public class OreSources {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
+        ModItems.register(modEventBus);
+
+        // Register the com.tresher.oresorces.item to a creative tab
         modEventBus.addListener(this::addCreative);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
@@ -45,9 +49,11 @@ public class OreSources {
 
     }
 
-    // Add the example block item to the building blocks tab
+    // Add the example block com.tresher.oresorces.item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.STRANGEITEM);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
