@@ -1,3 +1,7 @@
 {
-  "item.oresources.strangeitem": "Super strange item"
+  "item.oresources.strangeitem": "Super strange item",
+
+  "block.oresources.copper_source_block": "Copper Source",
+  "block.oresources.iron_source_block": "Iron Source",
+  "creativetab.oresources.oresources_mod": "Ore Sources"
 }

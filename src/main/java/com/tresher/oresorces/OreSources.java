@@ -1,5 +1,7 @@
 package com.tresher.oresorces;
 
+import com.tresher.oresorces.block.ModBlocks;
+import com.tresher.oresorces.item.ModCreativeModeTabs;
 import com.tresher.oresorces.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
@@ -36,7 +38,10 @@ public class OreSources {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the com.tresher.oresorces.item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -51,9 +56,13 @@ public class OreSources {
 
     // Add the example block com.tresher.oresorces.item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+        /*if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.STRANGEITEM);
         }
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.COPPER_SOURCE_BLOCK);
+            event.accept(ModBlocks.IRON_SOURCE_BLOCK);
+        }*/
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

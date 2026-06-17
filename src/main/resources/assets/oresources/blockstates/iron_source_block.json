@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "oresources:block/iron_source_block"
+    }
+  }
+}

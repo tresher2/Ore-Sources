@@ -1,3 +1,7 @@
 {
-  "item.oresources.strangeitem": "Супер странный предмет"
+  "item.oresources.strangeitem": "Супер странный предмет",
+
+  "block.oresources.copper_source_block": "Источник меди",
+  "block.oresources.iron_source_block": "Источник железа",
+  "creativetab.oresources.oresources_mod": "Источники руд"
 }

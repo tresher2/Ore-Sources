@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "oresources:block/copper_source_block"
+    }
+  }
+}

@@ -11,7 +11,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> STRANGEITEM = ITEMS.register("strangeitem",
             () -> new Item(new Item.Properties()));
-    //дублировать строчку выше, что бы создать ещё предмет, тут можн использовать _,
+
+    //дублировать строчку выше, что бы создать ещё предмет, тут можно использовать _,
     // надо ещё прописать в меню,
     // в языках (через зяпятую) item.oresources.strangeitem = то же имя, что и в регистре
     // models/ если перетащить json в item, то можно создать дубликат и переименовать в тоже имя

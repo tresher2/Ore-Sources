@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:servives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "oresources:copper_source_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "oresources:blocks/copper_source_block"
+}
