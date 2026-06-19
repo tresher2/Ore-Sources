@@ -2,6 +2,7 @@ package com.tresher.oresorces.block;
 
 
 import com.tresher.oresorces.OreSources;
+import com.tresher.oresorces.block.custom.copper_source_block;
 import com.tresher.oresorces.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -33,7 +34,7 @@ public class ModBlocks {
             .sound(SoundType.STONE)
     ));*/
     public static final DeferredBlock<Block> COPPER_SOURCE_BLOCK = registerBLock("copper_source_block",
-        () -> new Block(BlockBehaviour.Properties.of()
+        () -> new copper_source_block(BlockBehaviour.Properties.of()
                 .strength(3.0F, 3.0F)
                 .requiresCorrectToolForDrops()
                 .sound(SoundType.STONE)
