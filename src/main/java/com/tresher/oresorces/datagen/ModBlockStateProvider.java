@@ -6,6 +6,7 @@ import com.tresher.oresorces.block.custom.Source_block;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -22,6 +23,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         //blockWithItem(ModBlocks.IRON_SOURCE_BLOCK);
         customSource(ModBlocks.IRON_SOURCE_BLOCK);
         customSource(ModBlocks.COPPER_SOURCE_BLOCK);
+        customSource(ModBlocks.ZINC_SOURCE_BLOCK);
+
     }
     private void customSource(DeferredBlock<Block> currentBlock) {
         String currentName=currentBlock.getId().getPath().toLowerCase();

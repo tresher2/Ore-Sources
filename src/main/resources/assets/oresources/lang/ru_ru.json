@@ -3,6 +3,7 @@
 
   "block.oresources.copper_source_block": "Источник меди",
   "block.oresources.iron_source_block": "Источник железа",
+  "block.oresources.zinc_source_block": "Источник цинка",
 
   "creativetab.oresources.oresources_mod": "Источники руд"
 }

@@ -60,7 +60,7 @@ description="${mod_description}"
 # The coremods config file path is not configurable and is always loaded from META-INF/coremods.json
 
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.OreSources]] #optional
+[[dependencies.oresources]] #optional
     # the modid of the dependency
     modId="neoforge" #mandatory
     # The type of the dependency. Can be one of "required", "optional", "incompatible" or "discouraged" (case insensitive).
@@ -79,9 +79,9 @@ description="${mod_description}"
     side="BOTH"
 
 # Here's another dependency
-[[dependencies.OreSources]]
+[[dependencies.oresources]]
     modId="create"
-    type="required"
+    type="optional"
     # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="[6.0.7,)"
     ordering="AFTER"

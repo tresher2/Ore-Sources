@@ -1,13 +1,13 @@
-package com.tresher.oresorces.item;
+package com.tresher.oresorces;
 
-import com.tresher.oresorces.OreSources;
 import com.tresher.oresorces.block.ModBlocks;
+import com.tresher.oresorces.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -25,6 +25,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.STRANGEITEM);
                         output.accept(ModBlocks.COPPER_SOURCE_BLOCK);
                         output.accept(ModBlocks.IRON_SOURCE_BLOCK);
+
+                        if (ModList.get().isLoaded("create"))
+                            output.accept(ModBlocks.ZINC_SOURCE_BLOCK.get());
+
                     })
                     .build());
 

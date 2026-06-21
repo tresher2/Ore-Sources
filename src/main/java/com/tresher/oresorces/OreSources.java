@@ -1,9 +1,7 @@
 package com.tresher.oresorces;
 
 import com.tresher.oresorces.block.ModBlocks;
-import com.tresher.oresorces.item.ModCreativeModeTabs;
 import com.tresher.oresorces.item.ModItems;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;

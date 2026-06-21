@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -39,23 +40,28 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.IRON_SOURCE_BLOCK.get())
-                .add(ModBlocks.COPPER_SOURCE_BLOCK.get());
+                .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
+                .add(ModBlocks.ZINC_SOURCE_BLOCK.get());
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.IRON_SOURCE_BLOCK.get())
-                .add(ModBlocks.COPPER_SOURCE_BLOCK.get());
+                .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
+                .add(ModBlocks.ZINC_SOURCE_BLOCK.get());
 
         tag(simulatedNonMovable)
                 .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
-                .add(ModBlocks.IRON_SOURCE_BLOCK.get());
+                .add(ModBlocks.IRON_SOURCE_BLOCK.get())
+                .add(ModBlocks.ZINC_SOURCE_BLOCK.get());
 
         tag(createNonBreakable)
                 .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
-                .add(ModBlocks.IRON_SOURCE_BLOCK.get());
+                .add(ModBlocks.IRON_SOURCE_BLOCK.get())
+                .add(ModBlocks.ZINC_SOURCE_BLOCK.get());
 
         tag(createNonMovable)
                 .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
-                .add(ModBlocks.IRON_SOURCE_BLOCK.get());
+                .add(ModBlocks.IRON_SOURCE_BLOCK.get())
+                .add(ModBlocks.ZINC_SOURCE_BLOCK.get());
 
     }
 }
