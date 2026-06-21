@@ -7,6 +7,7 @@ import com.tresher.oresorces.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -21,19 +22,23 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(OreSources.MOD_ID);
 
-
     public static final DeferredBlock<Block> IRON_SOURCE_BLOCK = registerBLock("iron_source_block",
         () -> new Source_block(BlockBehaviour.Properties.of()
-                .strength(-1.0F, 3600000.0F)
+                //.strength(-1.0F, 3600000.0F)
+                .strength(3f, 3600000.0F)
                 .requiresCorrectToolForDrops()
                 .sound(SoundType.STONE)
+                .randomTicks()
     ));
     public static final DeferredBlock<Block> COPPER_SOURCE_BLOCK = registerBLock("copper_source_block",
         () -> new Source_block(BlockBehaviour.Properties.of()
-                .strength(-1.0F, 3600000.0F)
+                //.strength(-1.0F, 3600000.0F)
+                .strength(3f, 3600000.0F)
                 .requiresCorrectToolForDrops()
                 .sound(SoundType.STONE)
+                .randomTicks()
     ));
+
 
     private static <T extends Block> DeferredBlock<T> registerBLock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name,block);

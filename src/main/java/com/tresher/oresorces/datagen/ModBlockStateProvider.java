@@ -20,23 +20,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         //blockWithItem(ModBlocks.COPPER_SOURCE_BLOCK);
         //blockWithItem(ModBlocks.IRON_SOURCE_BLOCK);
-        customLamp(ModBlocks.IRON_SOURCE_BLOCK);
-        customLamp(ModBlocks.COPPER_SOURCE_BLOCK);
+        customSource(ModBlocks.IRON_SOURCE_BLOCK);
+        customSource(ModBlocks.COPPER_SOURCE_BLOCK);
     }
-    private void customLamp(DeferredBlock<Block> currentBlock) {
+    private void customSource(DeferredBlock<Block> currentBlock) {
         String currentName=currentBlock.getId().getPath().toLowerCase();
-        getVariantBuilder(currentBlock.get()).forAllStates(state -> {
-            if(state.getValue(Source_block.CLICKED)) {
-                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll(currentName,
-                        ResourceLocation.fromNamespaceAndPath(OreSources.MOD_ID, "block/" + currentName)))};
-            } else {
-                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll(currentName+"1",
-                        ResourceLocation.fromNamespaceAndPath(OreSources.MOD_ID, "block/" + currentName+"1")))};
-            }
-        });
-
-        simpleBlockItem(currentBlock.get(), models().cubeAll(currentName,//модель
-                ResourceLocation.fromNamespaceAndPath(OreSources.MOD_ID, "block/" + currentName)));
+        var builder = getVariantBuilder(currentBlock.get());
+        for (int age = 0; age <= Source_block.MAX_AGE; age++) {
+            builder.partialState()
+                    .with(Source_block.AGE, age)
+                    .setModels(new ConfiguredModel(models().cubeAll(
+                            currentName+age,
+                            ResourceLocation.fromNamespaceAndPath(OreSources.MOD_ID, "block/" + currentName+age)
+                    )));
+        }
+        simpleBlockItem(currentBlock.get(), models().cubeAll(currentName+"3",//модель
+                ResourceLocation.fromNamespaceAndPath(OreSources.MOD_ID, "block/" + currentName+"3")));
     }
 
     private void blockWithItem (DeferredBlock<?> deferredBlock){

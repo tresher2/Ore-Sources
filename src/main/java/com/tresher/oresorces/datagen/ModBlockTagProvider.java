@@ -3,8 +3,12 @@ package com.tresher.oresorces.datagen;
 import com.tresher.oresorces.OreSources;
 import com.tresher.oresorces.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -18,11 +22,40 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        /*tag(BlockTags.MINEABLE_WITH_PICKAXE)
+        TagKey<Block> createNonBreakable = TagKey.create(
+                Registries.BLOCK,
+                ResourceLocation.fromNamespaceAndPath("create", "non_breakable")
+        );
+
+        TagKey<Block> createNonMovable = TagKey.create(
+                Registries.BLOCK,
+                ResourceLocation.fromNamespaceAndPath("create", "non_movable")
+        );
+        TagKey<Block> simulatedNonMovable = TagKey.create(
+                Registries.BLOCK,
+                ResourceLocation.fromNamespaceAndPath("simulated", "non_movable")
+        );
+
+
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.IRON_SOURCE_BLOCK.get())
                 .add(ModBlocks.COPPER_SOURCE_BLOCK.get());
+
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.IRON_SOURCE_BLOCK.get())
-                .add(ModBlocks.COPPER_SOURCE_BLOCK.get());*/
+                .add(ModBlocks.COPPER_SOURCE_BLOCK.get());
+
+        tag(simulatedNonMovable)
+                .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
+                .add(ModBlocks.IRON_SOURCE_BLOCK.get());
+
+        tag(createNonBreakable)
+                .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
+                .add(ModBlocks.IRON_SOURCE_BLOCK.get());
+
+        tag(createNonMovable)
+                .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
+                .add(ModBlocks.IRON_SOURCE_BLOCK.get());
+
     }
 }
