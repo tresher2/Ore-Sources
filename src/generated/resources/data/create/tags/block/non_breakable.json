@@ -1,7 +1,8 @@
 {
   "values": [
-    "oresources:copper_source_block",
     "oresources:iron_source_block",
+    "oresources:copper_source_block",
+    "oresources:gold_source_block",
     "oresources:zinc_source_block"
   ]
 }

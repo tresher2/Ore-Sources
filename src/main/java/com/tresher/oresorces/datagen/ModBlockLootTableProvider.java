@@ -57,6 +57,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block-> createSourceMultipleOreDrop(ModBlocks.COPPER_SOURCE_BLOCK.get(), Items.RAW_COPPER, 2,5));
         add(ModBlocks.IRON_SOURCE_BLOCK.get(),
                 block-> createSourceOreDrop(ModBlocks.IRON_SOURCE_BLOCK.get(), Items.RAW_IRON));
+        add(ModBlocks.GOLD_SOURCE_BLOCK.get(),
+                block-> createSourceOreDrop(ModBlocks.GOLD_SOURCE_BLOCK.get(), Items.RAW_GOLD));
 
         Item rawZinc = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("create", "raw_zinc"));
         add(ModBlocks.ZINC_SOURCE_BLOCK.get(),

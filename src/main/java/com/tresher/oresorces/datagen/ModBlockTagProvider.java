@@ -20,7 +20,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     public ModBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, OreSources.MOD_ID, existingFileHelper);
     }
-
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         TagKey<Block> createNonBreakable = TagKey.create(
@@ -38,30 +37,22 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         );
 
 
-        tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.IRON_SOURCE_BLOCK.get())
-                .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
-                .add(ModBlocks.ZINC_SOURCE_BLOCK.get());
+        Block[] sourceBlocks = new Block[]{
+                ModBlocks.IRON_SOURCE_BLOCK.get(),
+                ModBlocks.COPPER_SOURCE_BLOCK.get(),
+                ModBlocks.GOLD_SOURCE_BLOCK.get(),
+                ModBlocks.ZINC_SOURCE_BLOCK.get()
+        };
 
-        tag(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.IRON_SOURCE_BLOCK.get())
-                .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
-                .add(ModBlocks.ZINC_SOURCE_BLOCK.get());
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(sourceBlocks);
 
-        tag(simulatedNonMovable)
-                .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
-                .add(ModBlocks.IRON_SOURCE_BLOCK.get())
-                .add(ModBlocks.ZINC_SOURCE_BLOCK.get());
+        tag(BlockTags.NEEDS_STONE_TOOL).add(sourceBlocks);
 
-        tag(createNonBreakable)
-                .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
-                .add(ModBlocks.IRON_SOURCE_BLOCK.get())
-                .add(ModBlocks.ZINC_SOURCE_BLOCK.get());
+        tag(simulatedNonMovable).add(sourceBlocks);
 
-        tag(createNonMovable)
-                .add(ModBlocks.COPPER_SOURCE_BLOCK.get())
-                .add(ModBlocks.IRON_SOURCE_BLOCK.get())
-                .add(ModBlocks.ZINC_SOURCE_BLOCK.get());
+        tag(createNonBreakable).add(sourceBlocks);
+
+        tag(createNonMovable).add(sourceBlocks);
 
     }
 }

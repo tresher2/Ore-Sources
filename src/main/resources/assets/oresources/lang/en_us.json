@@ -4,6 +4,7 @@
   "block.oresources.copper_source_block": "Copper Source",
   "block.oresources.iron_source_block": "Iron Source",
   "block.oresources.zinc_source_block": "Zinc Source",
+  "block.oresources.gold_source_block": "Gold Source",
 
   "creativetab.oresources.oresources_mod": "Ore Sources"
 }

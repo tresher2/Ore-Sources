@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.STRANGEITEM);
                         output.accept(ModBlocks.COPPER_SOURCE_BLOCK);
                         output.accept(ModBlocks.IRON_SOURCE_BLOCK);
+                        output.accept(ModBlocks.GOLD_SOURCE_BLOCK);
 
                         if (ModList.get().isLoaded("create"))
                             output.accept(ModBlocks.ZINC_SOURCE_BLOCK.get());

@@ -24,6 +24,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         customSource(ModBlocks.IRON_SOURCE_BLOCK);
         customSource(ModBlocks.COPPER_SOURCE_BLOCK);
         customSource(ModBlocks.ZINC_SOURCE_BLOCK);
+        customSource(ModBlocks.GOLD_SOURCE_BLOCK);
 
     }
     private void customSource(DeferredBlock<Block> currentBlock) {
@@ -37,8 +38,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
                             ResourceLocation.fromNamespaceAndPath(OreSources.MOD_ID, "block/" + currentName+age)
                     )));
         }
-        simpleBlockItem(currentBlock.get(), models().cubeAll(currentName+"3",//модель
-                ResourceLocation.fromNamespaceAndPath(OreSources.MOD_ID, "block/" + currentName+"3")));
+        simpleBlockItem(currentBlock.get(), models().cubeAll(currentName+"2",//модель
+                ResourceLocation.fromNamespaceAndPath(OreSources.MOD_ID, "block/" + currentName+"2")));
     }
 
     private void blockWithItem (DeferredBlock<?> deferredBlock){

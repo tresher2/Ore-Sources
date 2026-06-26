@@ -27,7 +27,7 @@ public class Source_block extends Block {
         super(properties);
         this.registerDefaultState(this.defaultBlockState()
                 .setValue(PLACED_DAY,0)
-                .setValue(AGE,0)
+                .setValue(AGE,1)
 
         );
     }
@@ -36,7 +36,7 @@ public class Source_block extends Block {
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         if(!level.isClientSide){
             level.setBlockAndUpdate(pos,state
-                    .setValue(PLACED_DAY, (int)((level.getGameTime() / 24000L) % 512L)
+                    .setValue(PLACED_DAY, (int)((level.getGameTime() / 24000L) % 512L - COUNT_DAYS_TO_STAGE)
             ));
         }
         super.setPlacedBy(level, pos, state, placer, stack);
@@ -70,7 +70,8 @@ public class Source_block extends Block {
 
         int currentAGE=state.getValue(AGE);
         if(currentAGE>=1){
-            dropResources(state,level,pos);
+            if (player.getMainHandItem().is(net.minecraft.tags.ItemTags.PICKAXES))
+                dropResources(state,level,pos);
             if(currentAGE==MAX_AGE)
                 level.setBlockAndUpdate(pos,state
                         .setValue(AGE, currentAGE-1)

@@ -45,6 +45,14 @@ public class ModBlocks {
                     .sound(SoundType.STONE)
                     .randomTicks()
             ));
+    public static final DeferredBlock<Block> GOLD_SOURCE_BLOCK = registerBLock("gold_source_block",
+            () -> new Source_block(BlockBehaviour.Properties.of()
+                    //.strength(-1.0F, 3600000.0F)
+                    .strength(3f, 3600000.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)
+                    .randomTicks()
+            ));
 
 
     private static <T extends Block> DeferredBlock<T> registerBLock(String name, Supplier<T> block){
