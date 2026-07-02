@@ -2,6 +2,7 @@ package com.tresher.oresorces.datagen;
 
 import com.tresher.oresorces.OreSources;
 import com.tresher.oresorces.block.ModBlocks;
+import com.tresher.oresorces.block.custom.Redstone_source_block;
 import com.tresher.oresorces.block.custom.Source_block;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -25,6 +26,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         customSource(ModBlocks.COPPER_SOURCE_BLOCK);
         customSource(ModBlocks.ZINC_SOURCE_BLOCK);
         customSource(ModBlocks.GOLD_SOURCE_BLOCK);
+        customRedstoneSource(ModBlocks.REDSTONE_SOURCE_BLOCK);
 
     }
     private void customSource(DeferredBlock<Block> currentBlock) {
@@ -33,6 +35,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
         for (int age = 0; age <= Source_block.MAX_AGE; age++) {
             builder.partialState()
                     .with(Source_block.AGE, age)
+                    .setModels(new ConfiguredModel(models().cubeAll(
+                            currentName+age,
+                            ResourceLocation.fromNamespaceAndPath(OreSources.MOD_ID, "block/" + currentName+age)
+                    )));
+        }
+        simpleBlockItem(currentBlock.get(), models().cubeAll(currentName+"2",//модель
+                ResourceLocation.fromNamespaceAndPath(OreSources.MOD_ID, "block/" + currentName+"2")));
+    }
+    private void customRedstoneSource(DeferredBlock<Block> currentBlock) {
+        String currentName=currentBlock.getId().getPath().toLowerCase();
+        var builder = getVariantBuilder(currentBlock.get());
+        for (int age = 0; age <= Redstone_source_block.MAX_AGE; age++) {
+            builder.partialState()
+                    .with(Redstone_source_block.AGE, age)
                     .setModels(new ConfiguredModel(models().cubeAll(
                             currentName+age,
                             ResourceLocation.fromNamespaceAndPath(OreSources.MOD_ID, "block/" + currentName+age)

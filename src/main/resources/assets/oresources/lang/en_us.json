@@ -5,6 +5,7 @@
   "block.oresources.iron_source_block": "Iron Source",
   "block.oresources.zinc_source_block": "Zinc Source",
   "block.oresources.gold_source_block": "Gold Source",
+  "block.oresources.redstone_source_block": "Redstone Source",
 
   "creativetab.oresources.oresources_mod": "Ore Sources"
 }

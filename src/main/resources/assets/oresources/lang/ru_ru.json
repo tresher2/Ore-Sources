@@ -5,6 +5,7 @@
   "block.oresources.iron_source_block": "Источник железа",
   "block.oresources.zinc_source_block": "Источник цинка",
   "block.oresources.gold_source_block": "Источник золото",
+  "block.oresources.redstone_source_block": "Источник редстоуна",
 
   "creativetab.oresources.oresources_mod": "Источники руд"
 }

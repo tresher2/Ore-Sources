@@ -2,6 +2,7 @@ package com.tresher.oresorces.block;
 
 
 import com.tresher.oresorces.OreSources;
+import com.tresher.oresorces.block.custom.Redstone_source_block;
 import com.tresher.oresorces.block.custom.Source_block;
 import com.tresher.oresorces.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -10,14 +11,20 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 public class ModBlocks {
+    private static ToIntFunction<BlockState> litBlockEmission(int lightValue) {
+        return (p_50763_) -> (Boolean)p_50763_.getValue(BlockStateProperties.LIT) ? lightValue : 0;
+    }
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(OreSources.MOD_ID);
 
@@ -37,14 +44,6 @@ public class ModBlocks {
                 .sound(SoundType.STONE)
                 .randomTicks()
     ));
-    public static final DeferredBlock<Block> ZINC_SOURCE_BLOCK = registerBLock("zinc_source_block",
-            () -> new Source_block(BlockBehaviour.Properties.of()
-                    //.strength(-1.0F, 3600000.0F)
-                    .strength(3f, 3600000.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.STONE)
-                    .randomTicks()
-            ));
     public static final DeferredBlock<Block> GOLD_SOURCE_BLOCK = registerBLock("gold_source_block",
             () -> new Source_block(BlockBehaviour.Properties.of()
                     //.strength(-1.0F, 3600000.0F)
@@ -53,6 +52,26 @@ public class ModBlocks {
                     .sound(SoundType.STONE)
                     .randomTicks()
             ));
+    public static final DeferredBlock<Block> REDSTONE_SOURCE_BLOCK = registerBLock("redstone_source_block",
+            () -> new Redstone_source_block(BlockBehaviour.Properties.of()
+                    //.strength(-1.0F, 3600000.0F)
+                    .strength(3f, 3600000.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)
+                    .randomTicks()
+                    .lightLevel(litBlockEmission(9))
+            ));
+
+    public static final DeferredBlock<Block> ZINC_SOURCE_BLOCK = registerBLock("zinc_source_block",
+            () -> new Source_block(BlockBehaviour.Properties.of()
+                    //.strength(-1.0F, 3600000.0F)
+                    .strength(3f, 3600000.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)
+                    .randomTicks()
+            ));
+
+
 
 
     private static <T extends Block> DeferredBlock<T> registerBLock(String name, Supplier<T> block){
