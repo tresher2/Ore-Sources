@@ -1,25 +1,22 @@
+# My First Mod - Ore Sources
+neoforge 1.21.1
 
-Installation information
-=======
+Welcome to my first simple mod! It adds ore sources, currently in several types.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+*This mod is in development!* This is essentially its alpha.
+## short info:
+- Ore sources are indestructible at stage 0.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+- Ore sources store information about their growth stage, the day they were installed (within the remainder of 512, to save memory), and some have vanilla parameters like redstone's glow.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+- Ore sources grow once per in-game day and night (20 real-world minutes, and their growth is not accelerated by a bed). It compares the installation day to the current day, allowing the block to grow even when the player isn't loading the chunk.
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+- The block compares the installation day to the current day at a random tick, so you may have to wait a bit when loading the chunk.
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+- It's compatible with the create mod, but not entirely well, since I have no idea how to make a block indestructible for drills at stage = 0. They don't call methods until the block is completely broken, or even getDestroyProgress. So I simply gave it tags that prevent drills from breaking it from there, since it's important to me that the block can be broken from creative mode or with a command.
+
+- The mod is in development, and in the future, they plan to add custom mini-structures and somehow remove the spawning of all other ores from the world.
+
+- The structures from the mod will have to spawn in specific biomes, like iron in plains, gold in deserts, etc.
+
+- Yes, I'll remove useless items later, don't worry about that.
