@@ -1,13 +1,12 @@
-<center>
+<div align="center">
 
-# mod: Ore Sources
+# Ore Sources
 neoforge 1.21.1
 
-</center>
+</div>
 
 
-Welcome to my first simple mod! It adds ore sources, currently in several types.
-
+Welcome to my first simple mod! It adds ore sources, currently in several types.  
 *This mod is in development!* This is essentially its alpha.
 ## short info:
 - Ore sources are indestructible at stage 0.
