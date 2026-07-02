@@ -1,4 +1,8 @@
+<center>
+
 # mod: Ore Sources
+
+<\center>
 neoforge 1.21.1
 
 Welcome to my first simple mod! It adds ore sources, currently in several types.
