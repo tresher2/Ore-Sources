@@ -1,6 +1,8 @@
 {
   "values": [
     "oresources:iron_source_block",
-    "oresources:copper_source_block"
+    "oresources:copper_source_block",
+    "oresources:coal_source_block",
+    "oresources:nether_quartz_source_block"
   ]
 }

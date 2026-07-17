@@ -22,15 +22,19 @@ public class ModCreativeModeTabs {
                     .icon(()->new ItemStack(ModBlocks.COPPER_SOURCE_BLOCK.get()))//я верю
                     .title(Component.translatable("creativetab.oresources.oresources_mod"))
                     .displayItems((itemDisplayParametrs, output)->{
-                        output.accept(ModItems.STRANGEITEM);
+
                         output.accept(ModBlocks.COPPER_SOURCE_BLOCK);
                         output.accept(ModBlocks.IRON_SOURCE_BLOCK);
                         output.accept(ModBlocks.GOLD_SOURCE_BLOCK);
                         output.accept(ModBlocks.REDSTONE_SOURCE_BLOCK);
+                        output.accept(ModBlocks.COAL_SOURCE_BLOCK);
+                        output.accept(ModBlocks.EMERALD_SOURCE_BLOCK);
+                        output.accept(ModBlocks.DIAMOND_SOURCE_BLOCK);
+                        output.accept(ModBlocks.NETHER_QUARTZ_SOURCE_BLOCK);
 
                         if (ModList.get().isLoaded("create"))
                             output.accept(ModBlocks.ZINC_SOURCE_BLOCK.get());
-
+                        output.accept(ModItems.STRANGEITEM);
                     })
                     .build());
 

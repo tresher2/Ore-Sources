@@ -2,6 +2,8 @@
   "values": [
     "oresources:gold_source_block",
     "oresources:zinc_source_block",
-    "oresources:redstone_source_block"
+    "oresources:diamond_source_block",
+    "oresources:redstone_source_block",
+    "oresources:emerald_source_block"
   ]
 }

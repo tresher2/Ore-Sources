@@ -51,26 +51,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 )
         );
     }
-    /*
-    protected LootTable.Builder createSourceMultipleOreDrop(Item item, float minDrops, float maxDrops) {
-        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
-        return LootTable.lootTable()
-                .withPool(LootPool.lootPool().add(
-                        LootItem.lootTableItem(item)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops,maxDrops)))
-                                .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))
-                )
-        );
-    }
-    protected LootTable.Builder createSourceOreDrop(Item item) {
-        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
-        return LootTable.lootTable()
-                .withPool(LootPool.lootPool().add(
-                                LootItem.lootTableItem(item)
-                                        .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))
-                        )
-                );
-    }*/
 
     @Override
     protected void generate() {
@@ -82,6 +62,15 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block-> createSourceOreDrop(Blocks.IRON_ORE,Items.RAW_IRON));
         add(ModBlocks.GOLD_SOURCE_BLOCK.get(),
                 block-> createSourceOreDrop(Blocks.GOLD_ORE,Items.RAW_GOLD));
+        add(ModBlocks.COAL_SOURCE_BLOCK.get(),
+                block-> createSourceOreDrop(Blocks.COAL_ORE,Items.COAL));
+        add(ModBlocks.DIAMOND_SOURCE_BLOCK.get(),
+                block-> createSourceOreDrop(Blocks.DIAMOND_ORE,Items.DIAMOND));
+        add(ModBlocks.EMERALD_SOURCE_BLOCK.get(),
+                block-> createSourceOreDrop(Blocks.EMERALD_ORE,Items.EMERALD));
+        add(ModBlocks.NETHER_QUARTZ_SOURCE_BLOCK.get(),
+                block-> createSourceOreDrop(Blocks.NETHER_QUARTZ_ORE,Items.QUARTZ));
+
         add(ModBlocks.REDSTONE_SOURCE_BLOCK.get(),
                 block-> createSourceMultipleOreDrop(Blocks.REDSTONE_ORE,Items.REDSTONE, 4,5));
 

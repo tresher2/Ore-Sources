@@ -6,6 +6,11 @@
   "block.oresources.zinc_source_block": "Zinc Source",
   "block.oresources.gold_source_block": "Gold Source",
   "block.oresources.redstone_source_block": "Redstone Source",
+  "block.oresources.coal_source_block": "Coal Source",
+  "block.oresources.diamond_source_block": "Diamond Source",
+  "block.oresources.emerald_source_block": "Emerald Source",
+  "block.oresources.nether_quartz_source_block": "Nether Quartz Source",
+
 
   "creativetab.oresources.oresources_mod": "Ore Sources"
 }

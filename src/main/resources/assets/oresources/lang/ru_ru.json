@@ -6,6 +6,10 @@
   "block.oresources.zinc_source_block": "Источник цинка",
   "block.oresources.gold_source_block": "Источник золото",
   "block.oresources.redstone_source_block": "Источник редстоуна",
+  "block.oresources.coal_source_block": "Источник угля",
+  "block.oresources.diamond_source_block": "Источник алмазов",
+  "block.oresources.emerald_source_block": "Источник изумрудов",
+  "block.oresources.nether_quartz_source_block": "Источник кварца",
 
   "creativetab.oresources.oresources_mod": "Источники руд"
 }

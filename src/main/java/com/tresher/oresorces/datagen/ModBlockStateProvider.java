@@ -26,6 +26,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         customSource(ModBlocks.COPPER_SOURCE_BLOCK);
         customSource(ModBlocks.ZINC_SOURCE_BLOCK);
         customSource(ModBlocks.GOLD_SOURCE_BLOCK);
+        customSource(ModBlocks.COAL_SOURCE_BLOCK);
+        customSource(ModBlocks.DIAMOND_SOURCE_BLOCK);
+        customSource(ModBlocks.EMERALD_SOURCE_BLOCK);
+        customSource(ModBlocks.NETHER_QUARTZ_SOURCE_BLOCK);
         customRedstoneSource(ModBlocks.REDSTONE_SOURCE_BLOCK);
 
     }
