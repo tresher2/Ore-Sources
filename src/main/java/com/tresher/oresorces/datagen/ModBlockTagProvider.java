@@ -44,15 +44,22 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 ModBlocks.ZINC_SOURCE_BLOCK.get(),
                 ModBlocks.REDSTONE_SOURCE_BLOCK.get()
         };
+        Block[] mineableStone = new Block[]{
+                ModBlocks.IRON_SOURCE_BLOCK.get(),
+                ModBlocks.COPPER_SOURCE_BLOCK.get(),
+        };
+        Block[] mineableIron = new Block[]{
+                ModBlocks.GOLD_SOURCE_BLOCK.get(),
+                ModBlocks.ZINC_SOURCE_BLOCK.get(),
+                ModBlocks.REDSTONE_SOURCE_BLOCK.get()
+        };
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(sourceBlocks);
-
-        tag(BlockTags.NEEDS_STONE_TOOL).add(sourceBlocks);
+        tag(BlockTags.NEEDS_STONE_TOOL).add(mineableStone);
+        tag(BlockTags.NEEDS_IRON_TOOL).add(mineableIron);
 
         tag(simulatedNonMovable).add(sourceBlocks);
-
         tag(createNonBreakable).add(sourceBlocks);
-
         tag(createNonMovable).add(sourceBlocks);
 
     }

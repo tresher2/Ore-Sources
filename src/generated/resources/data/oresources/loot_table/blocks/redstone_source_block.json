@@ -26,18 +26,27 @@
                   }
                 }
               ],
-              "name": "minecraft:iron_ore"
+              "name": "minecraft:redstone_ore"
             },
             {
               "type": "minecraft:item",
               "functions": [
+                {
+                  "add": false,
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "max": 5.0,
+                    "min": 4.0
+                  },
+                  "function": "minecraft:set_count"
+                },
                 {
                   "enchantment": "minecraft:fortune",
                   "formula": "minecraft:ore_drops",
                   "function": "minecraft:apply_bonus"
                 }
               ],
-              "name": "minecraft:raw_iron"
+              "name": "minecraft:redstone"
             }
           ]
         }
@@ -45,5 +54,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "oresources:blocks/iron_source_block"
+  "random_sequence": "oresources:blocks/redstone_source_block"
 }
