@@ -10,6 +10,9 @@
   "block.oresources.diamond_source_block": "Diamond Source",
   "block.oresources.emerald_source_block": "Emerald Source",
   "block.oresources.nether_quartz_source_block": "Nether Quartz Source",
+  "block.oresources.lapis_source_block": "Lapis Source",
+  "block.oresources.ancient_debris_source_block": "Ancient Debris Source",
+  "block.oresources.nether_gold_source_block": "Nether Gold Source",
 
 
   "creativetab.oresources.oresources_mod": "Ore Sources"

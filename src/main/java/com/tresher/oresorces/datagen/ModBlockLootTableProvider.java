@@ -70,6 +70,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block-> createSourceOreDrop(Blocks.EMERALD_ORE,Items.EMERALD));
         add(ModBlocks.NETHER_QUARTZ_SOURCE_BLOCK.get(),
                 block-> createSourceOreDrop(Blocks.NETHER_QUARTZ_ORE,Items.QUARTZ));
+        add(ModBlocks.LAPIS_SOURCE_BLOCK.get(),
+                block-> createSourceMultipleOreDrop(Blocks.LAPIS_ORE,Items.LAPIS_ORE, 4,9));
+        add(ModBlocks.ANCIENT_DEBRIS_SOURCE_BLOCK.get(),
+                block-> createSourceOreDrop(Blocks.ANCIENT_DEBRIS,Items.NETHERITE_SCRAP));
+        add(ModBlocks.NETHER_GOLD_SOURCE_BLOCK.get(),
+                block-> createSourceMultipleOreDrop(Blocks.NETHER_GOLD_ORE,Items.GOLD_NUGGET,2,6));
 
         add(ModBlocks.REDSTONE_SOURCE_BLOCK.get(),
                 block-> createSourceMultipleOreDrop(Blocks.REDSTONE_ORE,Items.REDSTONE, 4,5));

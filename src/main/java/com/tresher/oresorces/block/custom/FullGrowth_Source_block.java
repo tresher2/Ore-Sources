@@ -16,14 +16,14 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.PushReaction;
 import org.jetbrains.annotations.Nullable;
 
-public class Source_block extends Block {
+public class FullGrowth_Source_block extends Block {
     public static final IntegerProperty PLACED_DAY = IntegerProperty.create("placed_day",0,511);
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0,3);
     public static final int MAX_AGE = 3;
     public static final int COUNT_DAYS_TO_STAGE=1;
     //public static final BooleanProperty CLICKED = BooleanProperty.create("clicked");
 
-    public Source_block(Properties properties){
+    public FullGrowth_Source_block(Properties properties){
         super(properties);
         this.registerDefaultState(this.defaultBlockState()
                 .setValue(PLACED_DAY,0)
@@ -68,19 +68,12 @@ public class Source_block extends Block {
             return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
 
         int currentAGE=state.getValue(AGE);
-        if(currentAGE>=1){
-            if (player.getMainHandItem().is(net.minecraft.tags.ItemTags.PICKAXES))
-                dropResources(state, level, pos, null, player, player.getMainHandItem());
-            if(currentAGE==MAX_AGE)
-                level.setBlockAndUpdate(pos,state
-                        .setValue(AGE, currentAGE-1)
-                        .setValue(PLACED_DAY, (int)((level.getGameTime() / 24000L - COUNT_DAYS_TO_STAGE*(MAX_AGE-1) + 512L ) % 512L) )
-                        );
-            else
-                level.setBlockAndUpdate(pos,state
-                        .setValue(AGE, currentAGE-1)
-                        .setValue(PLACED_DAY, (state.getValue(PLACED_DAY)+COUNT_DAYS_TO_STAGE) % 512  )
-                );
+        if(currentAGE==MAX_AGE){
+            if (!player.getMainHandItem().is(net.minecraft.tags.ItemTags.PICKAXES)) return false;
+            dropResources(state, level, pos, null, player, player.getMainHandItem());
+            level.setBlockAndUpdate(pos,state.setValue(AGE, 0)
+                    .setValue(PLACED_DAY, (int)((level.getGameTime() / 24000L + 512L ) % 512L) )
+            );
         }
         return false;
 
@@ -88,7 +81,7 @@ public class Source_block extends Block {
 
     @Override
     protected float getDestroyProgress(BlockState state, Player player, BlockGetter level, BlockPos pos) {
-        if(state.getValue(AGE)==0)return 0;
+        if(state.getValue(AGE)!=MAX_AGE)return 0;
         return super.getDestroyProgress(state, player, level, pos);
     }
 

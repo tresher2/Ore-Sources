@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "oresources:block/ancient_debris_source_block3_top",
+    "side": "oresources:block/ancient_debris_source_block1_side",
+    "top": "oresources:block/ancient_debris_source_block1_top"
+  }
+}

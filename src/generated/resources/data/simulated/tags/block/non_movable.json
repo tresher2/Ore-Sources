@@ -8,6 +8,9 @@
     "oresources:diamond_source_block",
     "oresources:emerald_source_block",
     "oresources:nether_quartz_source_block",
-    "oresources:redstone_source_block"
+    "oresources:redstone_source_block",
+    "oresources:lapis_source_block",
+    "oresources:ancient_debris_source_block",
+    "oresources:nether_gold_source_block"
   ]
 }

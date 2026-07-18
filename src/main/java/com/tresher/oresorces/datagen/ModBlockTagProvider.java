@@ -47,12 +47,17 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 ModBlocks.EMERALD_SOURCE_BLOCK.get(),
                 ModBlocks.NETHER_QUARTZ_SOURCE_BLOCK.get(),
                 ModBlocks.REDSTONE_SOURCE_BLOCK.get(),
+                ModBlocks.LAPIS_SOURCE_BLOCK.get(),
+                ModBlocks.ANCIENT_DEBRIS_SOURCE_BLOCK.get(),
+                ModBlocks.NETHER_GOLD_SOURCE_BLOCK.get(),
+
         };
         Block[] mineableStone = new Block[]{
                 ModBlocks.IRON_SOURCE_BLOCK.get(),
                 ModBlocks.COPPER_SOURCE_BLOCK.get(),
                 ModBlocks.COAL_SOURCE_BLOCK.get(),
                 ModBlocks.NETHER_QUARTZ_SOURCE_BLOCK.get(),
+                ModBlocks.LAPIS_SOURCE_BLOCK.get(),
         };
         Block[] mineableIron = new Block[]{
                 ModBlocks.GOLD_SOURCE_BLOCK.get(),
@@ -61,10 +66,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 ModBlocks.REDSTONE_SOURCE_BLOCK.get(),
                 ModBlocks.EMERALD_SOURCE_BLOCK.get(),
         };
+        Block[] mineableDiamond = new Block[]{
+                ModBlocks.ANCIENT_DEBRIS_SOURCE_BLOCK.get(),
+        };
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(sourceBlocks);
         tag(BlockTags.NEEDS_STONE_TOOL).add(mineableStone);
         tag(BlockTags.NEEDS_IRON_TOOL).add(mineableIron);
+        tag(BlockTags.NEEDS_DIAMOND_TOOL).add(mineableDiamond);
 
         tag(simulatedNonMovable).add(sourceBlocks);
         tag(createNonBreakable).add(sourceBlocks);

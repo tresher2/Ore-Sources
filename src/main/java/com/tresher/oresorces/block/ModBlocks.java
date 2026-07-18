@@ -2,6 +2,7 @@ package com.tresher.oresorces.block;
 
 
 import com.tresher.oresorces.OreSources;
+import com.tresher.oresorces.block.custom.FullGrowth_Source_block;
 import com.tresher.oresorces.block.custom.Redstone_source_block;
 import com.tresher.oresorces.block.custom.Source_block;
 import com.tresher.oresorces.item.ModItems;
@@ -89,6 +90,30 @@ public class ModBlocks {
                     .sound(SoundType.STONE)
                     .randomTicks()
                     .lightLevel(litBlockEmission(9))
+            ));
+    public static final DeferredBlock<Block> LAPIS_SOURCE_BLOCK = registerBLock("lapis_source_block",
+            () -> new Source_block(BlockBehaviour.Properties.of()
+                    //.strength(-1.0F, 3600000.0F)
+                    .strength(3f, 3600000.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)
+                    .randomTicks()
+            ));
+    public static final DeferredBlock<Block> NETHER_GOLD_SOURCE_BLOCK = registerBLock("nether_gold_source_block",
+            () -> new Source_block(BlockBehaviour.Properties.of()
+                    //.strength(-1.0F, 3600000.0F)
+                    .strength(3f, 3600000.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)
+                    .randomTicks()
+            ));
+    public static final DeferredBlock<Block> ANCIENT_DEBRIS_SOURCE_BLOCK = registerBLock("ancient_debris_source_block",
+            () -> new FullGrowth_Source_block(BlockBehaviour.Properties.of()
+                    //.strength(-1.0F, 3600000.0F)
+                    .strength(30f, 3600000.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)
+                    .randomTicks()
             ));
 
     public static final DeferredBlock<Block> ZINC_SOURCE_BLOCK = registerBLock("zinc_source_block",

@@ -9,7 +9,10 @@
   "block.oresources.coal_source_block": "Источник угля",
   "block.oresources.diamond_source_block": "Источник алмазов",
   "block.oresources.emerald_source_block": "Источник изумрудов",
-  "block.oresources.nether_quartz_source_block": "Источник кварца",
+  "block.oresources.nether_quartz_source_block": "Незерский источник кварца",
+  "block.oresources.lapis_source_block": "Источник лазурита",
+  "block.oresources.ancient_debris_source_block": "Источник древних обломков",
+  "block.oresources.nether_gold_source_block": "Незерский источник золота",
 
   "creativetab.oresources.oresources_mod": "Источники руд"
 }

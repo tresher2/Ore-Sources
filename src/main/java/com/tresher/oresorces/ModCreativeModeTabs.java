@@ -30,7 +30,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.COAL_SOURCE_BLOCK);
                         output.accept(ModBlocks.EMERALD_SOURCE_BLOCK);
                         output.accept(ModBlocks.DIAMOND_SOURCE_BLOCK);
+                        output.accept(ModBlocks.LAPIS_SOURCE_BLOCK);
+                        output.accept(ModBlocks.ANCIENT_DEBRIS_SOURCE_BLOCK);
                         output.accept(ModBlocks.NETHER_QUARTZ_SOURCE_BLOCK);
+                        output.accept(ModBlocks.NETHER_GOLD_SOURCE_BLOCK);
 
                         if (ModList.get().isLoaded("create"))
                             output.accept(ModBlocks.ZINC_SOURCE_BLOCK.get());
