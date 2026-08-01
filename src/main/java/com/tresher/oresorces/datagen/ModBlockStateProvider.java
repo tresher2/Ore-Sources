@@ -1,7 +1,6 @@
 package com.tresher.oresorces.datagen;
 
-import com.mojang.datafixers.util.Pair;
-import com.mojang.logging.LogUtils;
+//import com.mojang.logging.LogUtils;
 import com.tresher.oresorces.OreSources;
 import com.tresher.oresorces.block.ModBlocks;
 import com.tresher.oresorces.block.custom.FullGrowth_Source_block;
@@ -11,18 +10,16 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import org.slf4j.Logger;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, OreSources.MOD_ID, exFileHelper);
     }
-    private static final Logger LOGGER = LogUtils.getLogger();
+    //private static final Logger LOGGER = LogUtils.getLogger();
 
     @Override
     protected void registerStatesAndModels() {

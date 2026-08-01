@@ -1,6 +1,7 @@
 package com.tresher.oresorces;
 
 import com.tresher.oresorces.block.ModBlocks;
+import com.tresher.oresorces.block.entity.ModBlockEntities;
 import com.tresher.oresorces.item.ModItems;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -40,6 +41,7 @@ public class OreSources {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         // Register the com.tresher.oresorces.item to a creative tab
         modEventBus.addListener(this::addCreative);
