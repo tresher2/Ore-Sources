@@ -26,8 +26,6 @@ public class Source_block extends BaseEntityBlock {
     public static final MapCodec<Source_block> CODEC =simpleCodec(Source_block::new);
     public static final short MAX_AGE = 3;
 
-    //public static final BooleanProperty CLICKED = BooleanProperty.create("clicked");
-
     public Source_block(Properties properties){
         super(properties);
         this.registerDefaultState(this.defaultBlockState()

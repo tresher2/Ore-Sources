@@ -24,7 +24,8 @@ public class ModBlockEntities {
                     ModBlocks.NETHER_QUARTZ_SOURCE_BLOCK.get(),
                     ModBlocks.LAPIS_SOURCE_BLOCK.get(),
                     ModBlocks.NETHER_GOLD_SOURCE_BLOCK.get(),
-                    ModBlocks.ZINC_SOURCE_BLOCK.get()
+                    ModBlocks.ZINC_SOURCE_BLOCK.get(),
+                    ModBlocks.ANCIENT_DEBRIS_SOURCE_BLOCK.get()
             ).build(null));
     
     public static void register(IEventBus eventBus){
