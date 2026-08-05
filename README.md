@@ -24,3 +24,5 @@ Welcome to my first simple mod! It adds ore sources, currently in several types.
 - The structures from the mod will have to spawn in specific biomes, like iron in plains, gold in deserts, etc.
 
 - Yes, I'll remove useless items later, don't worry about that.
+
+- Create, thanks for the rose quartz texture! I use it to create quartz ore at stage 3!
