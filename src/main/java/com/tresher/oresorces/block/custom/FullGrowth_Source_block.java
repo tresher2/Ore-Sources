@@ -19,8 +19,6 @@ import net.minecraft.world.level.material.PushReaction;
 import org.jetbrains.annotations.Nullable;
 
 public class FullGrowth_Source_block extends Source_block {
-    //public static final IntegerProperty AGE = IntegerProperty.create("age", 0,3);
-    //public static final MapCodec<Source_block> CODEC =simpleCodec(Source_block::new);
 
     public FullGrowth_Source_block(Properties properties){
         super(properties);
